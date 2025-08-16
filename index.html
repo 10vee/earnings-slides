@@ -5,17 +5,22 @@
   <title>Quarterly Earnings — Interactive Deck</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Reveal.js core + theme (CDN) -->
+  <!-- Reveal.js core + theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme" />
-
-  <!-- Code syntax highlighting theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css" />
 
   <style>
     footer.email {
-      position: absolute; bottom: 10px; right: 20px;
-      font-size: 0.8rem; opacity: 0.85;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+    .big-email {
+      font-size: 1.4rem;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -27,16 +32,15 @@
       <section>
         <h1>Quarterly Earnings Report</h1>
         <p>Stakeholder Briefing • Q2 FY2025</p>
-        <footer class="email">
+        <p class="big-email">
           Contact: <a href="mailto:24f2005847@ds.study.iitm.ac.in">24f2005847@ds.study.iitm.ac.in</a>
-        </footer>
+        </p>
         <aside class="notes">
           Welcome! This deck showcases Markdown, fragments, code highlighting, math, and speaker notes.
-          Use arrow keys; press "S" for presenter view.
         </aside>
       </section>
 
-      <!-- AGENDA (Animated with fragments) -->
+      <!-- AGENDA -->
       <section>
         <h2>Agenda</h2>
         <ul>
@@ -45,11 +49,10 @@
           <li class="fragment fade-in">Guidance &amp; risks</li>
           <li class="fragment fade-in-then-semi-out">Q&amp;A</li>
         </ul>
-        <aside class="notes">Reveal items one-by-one to keep focus on the current topic.</aside>
       </section>
 
-      <!-- MARKDOWN slide -->
-      <section data-markdown data-notes="Replace figures with your actual quarter numbers.">
+      <!-- MARKDOWN -->
+      <section data-markdown>
         <textarea data-template>
 ## Key Highlights _(Markdown)_
 - **Revenue:** Up **12% YoY**
@@ -57,11 +60,11 @@
 - **EPS:** $ \frac{\text{Net Income}}{\text{Shares Outstanding}} $
 - **Free Cash Flow:** Positive for the 6th consecutive quarter
 
-> This slide is authored in **Markdown** right inside the HTML.
+> This slide is authored in **Markdown**.
         </textarea>
       </section>
 
-      <!-- MATH (Financial formulas) -->
+      <!-- MATH -->
       <section>
         <h2>Financial Formulas</h2>
         <p>\[
@@ -70,12 +73,9 @@
         <p>\[
           \text{CAGR} = \left(\frac{V_f}{V_i}\right)^{\tfrac{1}{n}} - 1
         \]</p>
-        <aside class="notes">
-          Briefly define discount rate \( r \), cash flows \( CF_t \), initial outlay \( C_0 \), and relate CAGR to guidance.
-        </aside>
       </section>
 
-      <!-- CODE with syntax highlighting -->
+      <!-- CODE -->
       <section>
         <h2>Code Sample: Quick CAGR Check (Python)</h2>
 <pre><code class="language-python">
@@ -86,22 +86,24 @@ def cagr(final, initial, years):
 
 print(f"CAGR: {cagr(137.5, 100.0, 3):.2%}")
 </code></pre>
-        <aside class="notes">
-          Show analysts how to reproduce growth metrics. Syntax highlighting is automatic.
-        </aside>
       </section>
 
       <!-- Closing -->
       <section>
         <h2>Thank You</h2>
         <p class="fragment">Slides are published via GitHub Pages.</p>
-        <p class="fragment">Questions? <a href="mailto:24f2005847@ds.study.iitm.ac.in">24f2005847@ds.study.iitm.ac.in</a></p>
+        <p class="fragment">Questions?</p>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js + plugins (ES modules via CDN) -->
+  <!-- GLOBAL EMAIL FOOTER -->
+  <footer class="email">
+    <a href="mailto:24f2005847@ds.study.iitm.ac.in">24f2005847@ds.study.iitm.ac.in</a>
+  </footer>
+
+  <!-- Reveal.js init -->
   <script type="module">
     import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js';
     import RevealMarkdown from 'https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.esm.js';
@@ -112,10 +114,7 @@ print(f"CAGR: {cagr(137.5, 100.0, 3):.2%}")
     const deck = new Reveal({
       hash: true,
       slideNumber: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      math: {
-        // KaTeX auto-loads from CDN via the plugin
-      }
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
     });
     deck.initialize();
   </script>
