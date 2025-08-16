@@ -1,1 +1,116 @@
-<!-- (full HTML with .slide-email added to every section, same as shown above) -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — Interactive Deck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css" />
+
+  <style>
+    .slide-email {
+      position: absolute;
+      bottom: 8px;
+      right: 20px;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+    .big-email {
+      font-size: 1.4rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- TITLE -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p>Stakeholder Briefing • Q2 FY2025</p>
+        <p class="big-email">24f2005847@ds.study.iitm.ac.in</p>
+      </section>
+
+      <!-- AGENDA -->
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li class="fragment fade-in">Performance overview</li>
+          <li class="fragment fade-in">Revenue &amp; margin trends</li>
+          <li class="fragment fade-in">Guidance &amp; risks</li>
+          <li class="fragment fade-in-then-semi-out">Q&amp;A</li>
+        </ul>
+        <div class="slide-email">24f2005847@ds.study.iitm.ac.in</div>
+      </section>
+
+      <!-- MARKDOWN -->
+      <section data-markdown>
+        <textarea data-template>
+## Key Highlights _(Markdown)_
+- **Revenue:** Up **12% YoY**
+- **Operating Margin:** Improved by **180 bps**
+- **EPS:** $ \frac{\text{Net Income}}{\text{Shares Outstanding}} $
+- **Free Cash Flow:** Positive for the 6th consecutive quarter
+
+> This slide is authored in **Markdown**.
+
+<div class="slide-email">24f2005847@ds.study.iitm.ac.in</div>
+        </textarea>
+      </section>
+
+      <!-- MATH -->
+      <section>
+        <h2>Financial Formulas</h2>
+        <p>\[
+          \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0
+        \]</p>
+        <p>\[
+          \text{CAGR} = \left(\frac{V_f}{V_i}\right)^{\tfrac{1}{n}} - 1
+        \]</p>
+        <div class="slide-email">24f2005847@ds.study.iitm.ac.in</div>
+      </section>
+
+      <!-- CODE -->
+      <section>
+        <h2>Code Sample: Quick CAGR Check (Python)</h2>
+<pre><code class="language-python">
+import math
+
+def cagr(final, initial, years):
+    return (final/initial)**(1/years) - 1
+
+print(f"CAGR: {cagr(137.5, 100.0, 3):.2%}")
+</code></pre>
+        <div class="slide-email">24f2005847@ds.study.iitm.ac.in</div>
+      </section>
+
+      <!-- Closing -->
+      <section>
+        <h2>Thank You</h2>
+        <p class="fragment">Slides are published via GitHub Pages.</p>
+        <p class="fragment">Questions?</p>
+        <div class="slide-email">24f2005847@ds.study.iitm.ac.in</div>
+      </section>
+
+    </div>
+  </div>
+
+  <script type="module">
+    import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.esm.js';
+    import RevealMarkdown from 'https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.esm.js';
+    import RevealHighlight from 'https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.esm.js';
+    import RevealNotes from 'https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.esm.js';
+    import RevealMath from 'https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.esm.js';
+
+    const deck = new Reveal({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+    deck.initialize();
+  </script>
+</body>
+</html>
